@@ -485,7 +485,7 @@ class PHPExcel_Writer_HTML extends PHPExcel_Writer_Abstract implements PHPExcel_
 
             // Close table body.
             $html .= '        </tbody>' . PHP_EOL;
-
+            $html = rtrim($html,'<tr><td></td></tr>');//solve tcpdf to pdf has tr 
             // Write table footer
             $html .= $this->generateTableFooter();
 
